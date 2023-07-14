@@ -19,10 +19,7 @@ public class OrdenController {
     @Autowired //Dependencia con el Service
     OrdenServiceImpl ordenService;
 
-    @GetMapping("/listaOrdenes")
-    public ResponseEntity<List<OrdenEntity>> obtenerTodasLasOrdenes() {
-        return ResponseEntity.ok(ordenService.obtenerOrdenes());
-    }
+
 
 
 }

@@ -24,5 +24,8 @@ public class ClienteServiceImpl implements ClienteService {
         return clienteParaGuardar;
     }
 
-
+    @Override
+    public void borrarClientePorId(Long id) {
+        clienteRepository.deleteById(id);
+    }
 }

@@ -27,8 +27,7 @@ public class SecurityConfig {
         http//Especificamos las rutas a las que se puede acceder y a las que no o que se necesita un rol específico
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests((requests -> requests
-                        /*.requestMatchers("/medicamento", "/api", "/user/**").permitAll()*/
-                        .requestMatchers("/productos", "/ordenes/**").hasRole("ADMIN")
+                        .requestMatchers("/dashboard/**" ).hasRole("ADMIN")
                         .anyRequest().permitAll()))
                 .formLogin(login -> login
                         .loginPage("/login")

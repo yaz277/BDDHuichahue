@@ -12,4 +12,5 @@ public interface ClienteService {
 
     ClienteEntity crearNuevoCliente(ClienteEntity nuevoCliente);
 
+    void borrarClientePorId(Long id);
 }

@@ -21,10 +21,12 @@ public class ProductoController {
         return ResponseEntity.ok(productoService.obtenerProductos());
     }
 
-    //guardar
+    @PostMapping("agregarProductos")
+    public ResponseEntity<ProductoEntity> guardarNuevoProducto(@RequestBody ProductoEntity productoEntity) {
+        return ResponseEntity.ok(productoService.guardarNuevoProducto(productoEntity));
+    }
 
-
-    @DeleteMapping("borrarProducto/{id}")
+    @DeleteMapping("borrarProductos/{id}")
     public void borrarProductoPorId(@PathVariable("id")Long id) {
         productoService.borrarProductoPorId(id);
     }

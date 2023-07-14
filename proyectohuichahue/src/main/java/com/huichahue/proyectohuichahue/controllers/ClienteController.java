@@ -16,11 +16,6 @@ public class ClienteController {
     @Autowired //Dependencia con el Service
     ClienteServiceImpl clienteService;
 
-    @GetMapping("/listaClientes") // obtener lista de clientes
-    public ResponseEntity<List<ClienteEntity>> obtenerTodosLosClientes() {
-        return ResponseEntity.ok(clienteService.obtenerClientes());
-    }
-
     @PostMapping("/nuevo")  //Crear nuevo cliente
     public ResponseEntity<ClienteEntity> crearNuevoCliente(@RequestBody ClienteEntity clienteEntity) {
         return ResponseEntity.ok(clienteService.crearNuevoCliente(clienteEntity));
